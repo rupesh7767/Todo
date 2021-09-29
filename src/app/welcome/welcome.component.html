@@ -1,0 +1,10 @@
+<div class="container">Welcome {{name}} </div>
+
+<div class="container"> manage todo <a class="nav-link"  routerLink="/todos">Todo</a>
+
+    <input type="submit" class="fadeIn fourth" (click)="getwelcomemessage()" value="Welcome">
+</div>
+
+<div class="container" *ngIf="message">
+    <h2>{{message}}</h2>
+</div>

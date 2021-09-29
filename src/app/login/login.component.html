@@ -1,0 +1,31 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+    <div class="wrapper fadeInDown" style="padding: 150px;">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            Login
+          </div>
+      
+          <!-- Login Form -->
+         
+          <form>
+            <small *ngIf="invalidlogin">{{error}}</small>
+            <input type="text" id="login" class="fadeIn second" name="userid" [(ngModel)]="userid" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="password" [(ngModel)]="password" placeholder="password">
+            <input type="submit" class="fadeIn fourth" (click)="login()" value="Log In">
+          </form>
+      
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+          </div>
+      
+        </div>
+      </div>
+
+
+

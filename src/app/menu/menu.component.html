@@ -1,0 +1,17 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div>
+            <a class="navbar-brand" aria-current="page" href="#">RupeshMishra</a>
+        </div>
+        <ul class="navbar-nav">
+            <li><a class="nav-link" *ngIf="hardcodeauthService.isUserLogedIn()" routerLink="/welcome">Home</a></li>
+            <li> <a class="nav-link" *ngIf="hardcodeauthService.isUserLogedIn()" routerLink="/todos">Todo</a></li>
+            <li> <a class="nav-link" *ngIf="hardcodeauthService.isUserLogedIn()" routerLink="/addtodo">Create Todo</a></li>
+        </ul>
+
+        <li class="navbar-nav navbar-collapse justify-content-end">
+            <a class="nav-link" aria-current="page" *ngIf="!hardcodeauthService.isUserLogedIn()" routerLink="/login">Login</a>
+            <a class="nav-link" *ngIf="hardcodeauthService.isUserLogedIn()" routerLink="/logout">Logout</a>
+        </li>
+    </nav>
+</header>

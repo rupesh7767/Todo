@@ -1,0 +1,32 @@
+<p>craete-todo works!</p>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown" style="padding: 150px;">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        Create Todo
+      </div>
+  
+      <!-- Login Form -->
+     <div class="alert alert-warning" *ngIf="todoform.invalid && todoform.dirty">
+                Enter Valid Details
+     </div>
+     
+      <form (ngSubmit)="!todoform.invalid && createTodo()" #todoform = "ngForm" class="form form-register">
+        <input type="text" id="login" class="fadeIn second" name="discription" [(ngModel)]="discription" placeholder="discription" required="required">
+        <input type="datetime-local" id="password" class="fadeIn third" name="date" [(ngModel)]="date" placeholder="date" required="required">
+        <input type="submit" class="fadeIn fourth" value="Create" >
+      </form>
+  
+      <!-- Remind Passowrd -->
+      
+  
+    </div>
+</div>
+
+
+
