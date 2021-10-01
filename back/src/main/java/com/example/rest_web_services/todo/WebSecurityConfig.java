@@ -14,51 +14,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
         protected void configure(org.springframework.security.config.annotation.web.builders.HttpSecurity http) throws java.lang.Exception {
 
-            // http
-            //    // .csrf().disable();
-            //      .authorizeRequests()
-                // .antMatchers(HttpMethod.GET,"/**").permitAll()
-                // .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
-                // .antMatchers(HttpMethod.POST,"/**").permitAll()
-                // .antMatchers(HttpMethod.PUT,"/**").permitAll()
-                // .antMatchers(HttpMethod.DELETE,"/**").permitAll()
-            //         .anyRequest().authenticated()
-            //         .and()
-                 
-                
-            // // .authenticated()
-            // // .and()
-            // // .httpBasic();
-
-            //     // .antMatchers(HttpMethod.GET"/**").permitAll()
+     
                
 
-            http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/**").permitAll()
-                .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
-                .antMatchers(HttpMethod.POST,"/**").permitAll()
-                .antMatchers(HttpMethod.PUT,"/**").permitAll()
-                .antMatchers(HttpMethod.DELETE,"/**").permitAll()
-                         .anyRequest().authenticated();
-                        //  .and()
-                        //  .httpBasic();
-                    
+             http
+                 .csrf().disable()
+                 .authorizeRequests()
+                 .antMatchers(HttpMethod.GET,"/**").permitAll()
+                 .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+                 .antMatchers(HttpMethod.POST,"/**").permitAll()
+                 .antMatchers(HttpMethod.PUT,"/**").permitAll()
+                 .antMatchers(HttpMethod.DELETE,"/**").permitAll()
+                 .antMatchers(HttpMethod.GET,"/h2/**").permitAll()
+                 .antMatchers(HttpMethod.POST,"/h2/**").permitAll()
+                          .anyRequest().authenticated()
+                           .and();
+//                           .httpBasic();
+            
+              http.headers().frameOptions().disable();
+
 
         }
 
 }
 
-// // @Override
-// // protected void registerAuthentication(AuthenticationManagerBuilder
-// authManagerBuilder) throws Exception {
-// // authManagerBuilder
-// // .inMemoryAuthentication()
-// // .withUser("user").password("password").roles("ADMIN");
-// // }
-
-// @Override
-// public void addCorsMappings(CorsRegistry registry) {
-// registry.addMapping("/**").allowedMethods("*");
-// }

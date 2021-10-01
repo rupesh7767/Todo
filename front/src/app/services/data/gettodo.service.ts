@@ -15,7 +15,7 @@ export class GettodoService {
 
   getTodoData (username: string){
     const headers = { 'Authorization': 'Origin', 'My-Custom-Header': 'http://localhost:4200' };
-    return this.http.get<Todo[]>(`http://localhost:8080/users/${username}/todos`);
+    return this.http.get<Todo[]>(`http://localhost:8080/jpa/users/${username}/todos`);
   }
 
   deleteTodo(username : String , id : number) {
